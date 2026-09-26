@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package vault.storage;
+
+service VaultStorage {
+  rpc Put(PutRequest) returns (PutResponse);
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc GetTelemetry(TelemetryRequest) returns (TelemetryResponse);
+}
+
+message PutRequest {
+  string object_id = 1;
+  bytes data = 2;
+}
+
+message PutResponse {
+  string object_id = 1;
+  int64 size_bytes = 2;
+  string checksum = 3;
+  int64 created_at = 4;
+}
+
+message GetRequest {
+  string object_id = 1;
+}
+
+message GetResponse {
+  bytes data = 1;
+}
+
+message TelemetryRequest {
+}
+
+message TelemetryResponse {
+  string node_id = 1;
+  int64 disk_free_bytes = 2;
+  int64 disk_total_bytes = 3;
+  int64 timestamp = 4;
+}
