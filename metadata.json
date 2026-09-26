@@ -1,0 +1,6 @@
+{
+  "name": "Vault-Auction",
+  "description": "Autonomous reverse-auction-based distributed object store with real-time telemetry, live storage auctions, node fleet management, and S3-compatible object storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
